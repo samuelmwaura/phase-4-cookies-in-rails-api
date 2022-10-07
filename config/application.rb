@@ -40,8 +40,10 @@ module Phase4CookiesInRailsApi
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
+    #Browser only sends these cookies to websites that are on the same domain.
     config.action_dispatch.cookies_same_site_protection = :strict
   end
 end
